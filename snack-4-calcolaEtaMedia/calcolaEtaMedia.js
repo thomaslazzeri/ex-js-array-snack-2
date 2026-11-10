@@ -44,3 +44,10 @@ const books = [
         tags: ['html', 'advanced', 'junior', 'mid-senior']
     },
 ];
+
+const ages = author.map(a => a.age);
+
+const agesSum = age.reduce((acc, age) => acc + age, 0);
+
+const averageAge = agesSum / age.length;
+console.log(`Età media degli autori: ${averageAge}`);
