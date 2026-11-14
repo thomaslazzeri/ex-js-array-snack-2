@@ -47,12 +47,12 @@ const books = [
 
 const areThereAvailableBooks = books.some((b) => b.available === true);
 
-const booksByPrice = [...books].sort((a, b) => a.price - b.price);
+const booksByPrice = [...books].sort((a, b) => parseFloat(a.price) - parseFloat(b.price));
 
 booksByPrice.sort((a, b) => {
-    if (a.available && !a.available) return -1
+    if (a.available && !b.available) return -1
 
-    if (!a.available && b.available) 1
+    if (!a.available && b.available) return 1
 
     return 0;
 });
